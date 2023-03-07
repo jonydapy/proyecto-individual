@@ -1,0 +1,23 @@
+#ico-barra {
+    height: 3em;
+}
+#radio-especial {
+    border-radius: 15px;
+}
+#radio-especial img{
+    border-radius: 15px 15px 0px 0px;
+}
+#radio-especial-2 {
+    border-radius: 15px;
+}
+#star {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+#puntaje {
+    height: 1.5em;
+}
+#portada{
+    width: 100%;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/formato.css') }}">
+    <title>Login - BAP</title>
+</head>
+<body class="bg-body-secondary">
+    <nav class="navbar bg-body-tertiary shadow-sm">
+        <div class="container-fluid container p-0">
+            <a class="navbar-brand text-primary fw-bold">BarAlertPro</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-light border border-dark-subtle rounded-circle" type="submit" id="ico-barra">
+                    <img src="{{ url_for('static', filename='img/ico/bi_search.png') }}" alt="">
+                </button>
+            </form>
+            <div>
+                <a href="#" class="btn btn-light border border-dark-subtle rounded-circle" id="ico-barra">
+                    <img src="{{ url_for('static', filename='img/ico/ph_bell-ringing.png') }}" alt="">
+                </a>
+                <a href="{{ url_for('home') }}" class="btn btn-light border border-dark-subtle rounded-circle" id="ico-barra">
+                    <img src="{{ url_for('static', filename='img/ico/ri_home-line.png') }}" alt="">
+                </a>
+                <a href="{{ url_for('reg_user') }}" class="btn btn-primary rounded-pill" id="ico-barra">
+                    Registrarse
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="container  col-2 mt-5 p-0">
+        <form class="form-control fw-bold p-3" id="radio-especial"  action="{{ url_for('log_user') }}" method="post">
+            <p class="border-bottom border-primary border-3 fs-3 text-center">Login</p>
+            <div class="mb-3">
+                <label for="user_mail" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="user_mail" name="user_mail">
+            </div>
+            <div class="mb-3">
+                <label for="user_password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="user_password" name = "user_password">
+            </div>
+            <div class="mb-2">
+                <button type="submit" class="btn btn-primary rounded-pill">Iniciar Sesión</button>
+            </div>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="text-center text-white bg-danger col-12 rounded my-3">
+                        <p>{{message}}</p>
+                    </div >
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+</body>
+</html>

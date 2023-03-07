@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/BarAlertPro/static/css/formato.css">
+    <title>Bar - BAP</title>
+</head>
+<body class="bg-body-secondary">
+        <nav class="navbar bg-body-tertiary shadow-sm mb-3">
+            <div class="container-fluid container p-0">
+                <a class="navbar-brand text-primary fw-bold">BarAlertPro</a>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-light border border-dark-subtle rounded-circle" type="submit" id="ico-barra">
+                        <img src="/BarAlertPro/static/img/ico/bi_search.png" alt="">
+                    </button>
+                </form>
+                <div>
+                    <a href="#" class="btn btn-light border border-dark-subtle rounded-circle" id="ico-barra">
+                        <img src="/BarAlertPro/static/img/ico/ph_bell-ringing.png" alt="">
+                    </a>
+                    <a href="#" class="btn btn-light border border-dark-subtle rounded-circle" id="ico-barra">
+                        <img src="/BarAlertPro/static/img/ico/ph_currency-dollar.png" alt="">
+                    </a>
+                    <a href="#" class="btn btn-light border border-dark-subtle rounded-circle" id="ico-barra">
+                        <img src="/BarAlertPro/static/img/ico/ri_home-line.png" alt="">
+                    </a>
+                    <a href="#" class="btn btn-primary rounded-pill" id="ico-barra">
+                        <img src="/BarAlertPro/static/img/ico/ph_plus.png" alt="">
+                        Publicar
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <img src="/BarAlertPro/static/img/bar-perfil.png" alt="perfil" class="align-items-center">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="fs-3 fw-semibold text-center">Bar de Jony</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col bg-light shadow-sm me-4" id="radio-especial">
+                    <form class="fw-bold p-3" id="radio-especial">
+                        <p class="border-bottom border-primary border-3 fs-3">Actualizar datos</p>
+                        <div class="mb-3">
+                            <label for="user_nickname" class="form-label">Nombre de Bar</label>
+                            <input type="text" class="form-control" id="user_nickname" aria-describedby="emailHelp" name="user_nickname">
+                        </div>
+                        <div class="mb-3">
+                            <label for="user_mail" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="user_mail" name = "user_mail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="user_mail" class="form-label">Link Menu</label>
+                            <input type="text" class="form-control" id="user_mail" name = "user_mail">
+                        </div>
+                        <div class="mb-2">
+                            <button type="submit" class="btn btn-primary rounded-pill">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4 bg-light p-3 shadow-sm me-4" id="radio-especial">
+                    <div class="fs-3 text fw-semibold p-0 border-bottom border-primary border-3">Tus datos</div>
+                    <div class="col mt-3">
+                        <div class="row">
+                                <p class="col-5 fw-bold">Reseñas recibidas:</p>
+                                <p class="col">200</p>
+                        </div>
+                        <div class="row">
+                                <p class="col-5 fw-bold">Calificación:</p>
+                                <div class="col">
+                                    <div class="row">
+                                        <p class="col-9">4.5
+                                            <img src="/BarAlertPro/static/img/ico/star.png" alt="">
+                                        </p>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="row">
+                            <p class="col-5 fw-bold">Aportes:</p>
+                            <p class="col">200</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col bg-light p-3 shadow-sm" id="radio-especial">
+                    <div class="fs-3 text fw-semibold p-0 border-bottom border-primary border-3">Tus aportes</div>
+                    <table class="table mt-3 text-center">
+                        <tr>
+                            <td><img src="/BarAlertPro/static/img/ico/ion_beer-outline.png" alt=""></td>
+                            <td><p class="fw-bold">Bar de Jony</p></td>
+                            <td>2x1 Pilsen</td>
+                            <td>Gs. 30.000</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/BarAlertPro/static/img/ico/ion_beer-outline.png" alt=""></td>
+                            <td><p class="fw-bold">Bar de Jony</p></td>
+                            <td>2x1 Pilsen</td>
+                            <td>Gs. 30.000</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/formato.css') }}">
+    <title>Add Promo - BAP</title>
+</head>
+<body class="bg-body-secondary">
+    <nav class="navbar bg-body-tertiary shadow-sm">
+        <div class="container-fluid container p-0">
+            <a class="navbar-brand text-primary fw-bold">BarAlertPro</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-light border border-dark-subtle rounded-circle" type="submit" id="ico-barra">
+                    <img src="{{ url_for('static', filename='img/ico/bi_search.png') }}" alt="">
+                </button>
+            </form>
+            <div>
+                <a href="#" class="btn btn-light border border-dark-subtle rounded-circle" id="ico-barra">
+                    <img src="{{ url_for('static', filename='img/ico/ph_bell-ringing.png') }}" alt="">
+                </a>
+                <a href="{{ url_for('edit_account') }}" class="btn btn-light border border-dark-subtle rounded-circle" id="ico-barra">
+                    <img src="{{ url_for('static', filename='img/ico/ph_user.png') }}" alt="">
+                </a>
+                <a href="{{ url_for('all_promos') }}" class="btn btn-light border border-dark-subtle rounded-circle" id="ico-barra">
+                    <img src="{{ url_for('static', filename='img/ico/ph_currency-dollar.png') }}" alt="">
+                </a>
+                <a href="{{ url_for('home') }}" class="btn btn-light border border-dark-subtle rounded-circle" id="ico-barra">
+                    <img src="{{ url_for('static', filename='img/ico/ri_home-line.png') }}" alt="">
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5 p-0">
+        <form class="form-control fw-bold" action="{{ url_for('post_promo') }}" method="post">
+            <p class="border-bottom border-primary border-3 fs-3 text-center">Agregar Promo</p>
+            <input type="hidden" value="{{ id }}" name="users_id_user">
+            <div class="mb-3">
+                <label for="nombre_promo" class="form-label">Nombre de la promo</label>
+                <input type="text" class="form-control" id="nombre_promo" name="nombre_promo">
+            </div>
+<!--             <div class="mb-3">
+                <label for="bares_id_bares" class="form-label">Bar de la Promo</label>
+                <input type="text" class="form-control" id="bares_id_bares" name="bares_id_bares">
+            </div> -->
+            <div class="mb-3">
+                <label for="select" class="form-label">Bar de la promo</label>
+                <select class="form-select" id="select" name="bares_id_bares">
+                    <option selected>Seleccione en que ubicacion es</option>
+                    {% for i in lista_bares %}
+                    <option value="{{ i.id_bares }}">{{ i.nombre_bar }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="bebida_tipo" class="form-label">Tipo</label>
+                <select class="form-select" id="bebida_tipo" name="bebida_tipo">
+                    <option selected>Seleccione bebida</option>
+                    <option value="cerveza">Cerveza</option>
+                    <option value="Gin Tonic">Gin Tonic</option>
+                    <option value="Caipiniña">Caipiriña</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="precio_promo" class="form-label">Precio</label>
+                <input type="text" class="form-control" id="precio_promo" name="precio_promo">
+            </div>
+            <div class="mb-2">
+                <button type="submit" class="btn btn-primary rounded-pill w-100">Agregar promo</button>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-secondary rounded-pill w-100">Cancelar</button>
+            </div>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="text-center text-white bg-danger col-12 rounded my-3">
+                        <p>{{message}}</p>
+                    </div >
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+</body>
+</html>
